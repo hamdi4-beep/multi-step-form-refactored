@@ -4,7 +4,7 @@ import { steps } from "./data"
 function App() {
   return (
     <div className="App">
-      <div className="container">
+      <main className="container">
         <div className="sidebar">
           {steps.map(step => (
             <div className={`step ${step.order === 1 ? 'active' : ''}`} key={step.order}>
@@ -21,7 +21,7 @@ function App() {
         <section className="main-content">
           <YourInfo />
         </section>
-      </div>
+      </main>
     </div>
   )
 }

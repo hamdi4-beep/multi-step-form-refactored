@@ -31,6 +31,18 @@ body {
     min-height: 100vh;
 }
 
+input {
+    width: 100%;
+    display: block;
+    margin-bottom: 1em;
+    padding: .8em;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid var(--neutral-purple-200);
+    font: inherit;
+    color: var(--neutral-grey-500);
+}
+
 .container {
     background-color: var(--neutral-white);
     padding: 1em;
@@ -108,18 +120,6 @@ body {
     color: var(--primary-blue-950);
     margin-bottom: .5em;
     display: block;
-}
-
-input {
-    width: 100%;
-    display: block;
-    margin-bottom: 1em;
-    padding: .8em;
-    border-radius: 10px;
-    outline: none;
-    border: 1px solid var(--neutral-purple-200);
-    font: inherit;
-    color: var(--neutral-grey-500);
 }
 
 .cta-btn {
