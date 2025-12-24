@@ -1,8 +1,8 @@
 const YourInfo = () => {
   return (
     <div className="step-1">
-      <h1>Personal Info</h1>
-      <p>Please provide your name, email address, and phone number.</p>
+      <h1 className="title">Personal Info</h1>
+      <p className="description">Please provide your name, email address, and phone number.</p>
 
       <form action="#">
         <label htmlFor="name">Name</label>
@@ -10,8 +10,8 @@ const YourInfo = () => {
         <label htmlFor="emailAddress">Email Address</label>
         <input type="email" name="email" id="email" placeholder="e.g. stephenking@lorem.com" />
         <label htmlFor="phoneNumber">Phone Number</label>
-        <input type="number" name="phone" id="phone" />
-        <button>Next Step</button>
+        <input type="number" name="phone" id="phone" min='0' placeholder="e.g. +1 234 567 890" />
+        <button className="cta-btn">Next Step</button>
       </form>
     </div>
   )
