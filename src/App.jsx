@@ -22,8 +22,8 @@ function App() {
     <div className="App">
       <div className="container">
         <div className="sidebar">
-          <div className="step one">
-            <span className="active">1</span>
+          <div className="step one active">
+            <span>1</span>
 
             <div>
               <p>Step 1</p>

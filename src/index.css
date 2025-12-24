@@ -63,7 +63,7 @@ body {
     margin-bottom: 1.5em;
 }
 
-.step span.active {
+.active span {
     background-color: var(--neutral-white);
     color: black;
 }
