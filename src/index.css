@@ -136,3 +136,33 @@ input {
     color: var(--neutral-white);
     cursor: pointer;
 }
+
+.plans-list {
+    display: flex;
+    gap: 1em;
+}
+
+.plan-item {
+    border: 1px solid var(--neutral-purple-200);
+    border-radius: 10px;
+    padding: 1em;
+    padding-right: 4em;
+}
+
+.plan-item.active {
+    background-color: var(--neutral-blue-100);
+    border: 1px solid var(--primary-blue-950);
+}
+
+.plan-item h4 {
+    color: var(--primary-blue-950);
+    margin-bottom: .3em;
+}
+
+.plan-item p {
+    color: var(--neutral-grey-500);
+}
+
+.plan-item .icon-img {
+    margin-bottom: 3em;
+}
