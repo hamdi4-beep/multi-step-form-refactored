@@ -4,6 +4,7 @@ import { steps, plans } from "./data"
 
 const SelectPlan = () => {
   const [selectedPlan, setSelectedPlan] = useState('')
+  const [billingCycle, setBillingCycle] = useState('monthly')
 
   return (
     <div className="step-2">
@@ -23,6 +24,12 @@ const SelectPlan = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className={`toggle ${billingCycle === 'yearly' ? 'active' : ''}`}>
+        <p className="monthly" onClick={() => setBillingCycle('monthly')}>Monthly</p>
+        <div className="switch"></div>
+        <p className="yearly" onClick={() => setBillingCycle('yearly')}>Yearly</p>
       </div>
     </div>
   )

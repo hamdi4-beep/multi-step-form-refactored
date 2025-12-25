@@ -166,3 +166,42 @@ input {
 .plan-item .icon-img {
     margin-bottom: 3em;
 }
+
+.toggle {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    margin-top: 3em;
+    width: fit-content;
+    margin-inline: auto;
+}
+
+.toggle.active .switch::after {
+    margin-left: auto;
+}
+
+.toggle p, .toggle.active p.monthly {
+    color: var(--neutral-grey-500);
+    cursor: pointer;
+}
+
+.toggle p.monthly, .toggle.active p.yearly {
+    color: var(--primary-blue-950);
+    cursor: pointer;
+}
+
+.toggle .switch {
+    background-color: var(--primary-blue-950);
+    border-radius: 10em;
+    width: 3em;
+    padding: .3em;
+}
+
+.toggle .switch::after {
+    content: '';
+    display: block;
+    background-color: var(--neutral-white);
+    width: 1em;
+    height: 1em;
+    border-radius: 100%;
+}
