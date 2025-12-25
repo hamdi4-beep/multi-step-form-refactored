@@ -1,4 +1,6 @@
+import { Route, Routes } from "react-router"
 import SelectPlan from "./components/SelectPlan"
+import YourInfo from './components/YourInfo'
 import { steps } from "./data"
 
 function App() {
@@ -19,7 +21,10 @@ function App() {
         </div>
 
         <section className="main-content">
-          <SelectPlan />
+          <Routes>
+            <Route index element={<YourInfo />} />
+            <Route path="/select-plan" element={<SelectPlan />} />
+          </Routes>
         </section>
       </main>
     </div>

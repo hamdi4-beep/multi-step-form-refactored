@@ -1,10 +1,15 @@
 function YourInfo() {
+  const handleSubmit = e => {
+    e.preventDefault()
+    location.href = `${import.meta.env.BASE_URL + "/select-plan"}`
+  }
+
   return (
     <div className="step-1">
       <h1 className="title">Personal Info</h1>
       <p className="description">Please provide your name, email address, and phone number.</p>
 
-      <form action="#">
+      <form action="#" onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
         <input type="text" name="name" id="name" placeholder="e.g. Stephen King" />
         <label htmlFor="emailAddress">Email Address</label>

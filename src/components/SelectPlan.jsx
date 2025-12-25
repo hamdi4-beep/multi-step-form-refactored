@@ -36,7 +36,7 @@ function SelectPlan() {
       </div>
 
       <div className="action-buttons">
-        <button className="previous-btn">Go Back</button>
+        <button className="previous-btn" onClick={() => location.href = '/'}>Go Back</button>
         <button className="cta-btn">Next Step</button>
       </div>
     </div>
