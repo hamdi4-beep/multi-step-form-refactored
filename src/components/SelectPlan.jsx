@@ -1,7 +1,9 @@
 import { useState } from "react"
 import { plans } from "../data"
+import { useNavigate } from "react-router"
 
 function SelectPlan() {
+  const navigate = useNavigate()
   const [selectedPlan, setSelectedPlan] = useState('')
   const [billingCycle, setBillingCycle] = useState('monthly')
 
@@ -36,7 +38,7 @@ function SelectPlan() {
       </div>
 
       <div className="action-buttons">
-        <button className="previous-btn" onClick={() => location.href = '/'}>Go Back</button>
+        <button className="previous-btn" onClick={() => navigate('/')}>Go Back</button>
         <button className="cta-btn">Next Step</button>
       </div>
     </div>

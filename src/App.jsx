@@ -3,25 +3,19 @@ import SelectPlan from "./components/SelectPlan"
 import YourInfo from './components/YourInfo'
 import { steps } from "./data"
 
-const paths = {
-  '/': 1,
-  '/select-plan': 2
-}
-
 function App() {
   const location = useLocation()
-  const currentStepOrder = paths[location.pathname]
 
   return (
     <div className="App">
       <main className="container">
         <div className="sidebar">
           {steps.map(step => (
-            <div className={`step ${step.order === currentStepOrder ? 'active' : ''}`} key={step.order}>
-              <span>{step.order}</span>
+            <div className={`step ${step.path === location.pathname ? 'active' : ''}`} key={step.id}>
+              <span>{step.id}</span>
 
               <div>
-                <p>Step {step.order}</p>
+                <p>Step {step.id}</p>
                 <h4>{step.title}</h4>
               </div>
             </div>

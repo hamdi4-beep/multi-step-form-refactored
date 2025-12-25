@@ -1,19 +1,23 @@
 export const steps = [
   {
     title: 'Your Info',
-    order: 1
+    path: '/',
+    id: 1
   },
   {
     title: 'Select Plan',
-    order: 2
+    path: '/select-plan',
+    id: 2
   },
   {
     title: 'Add-Ons',
-    order: 3
+    path: '/add-ons',
+    id: 3
   },
   {
     title: 'Summary',
-    order: 4
+    path: '/summary',
+    id: 4
   }
 ]
 

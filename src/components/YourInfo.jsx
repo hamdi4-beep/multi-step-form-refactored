@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router"
+
 function YourInfo() {
+  const navigate = useNavigate()
+
   const handleSubmit = e => {
     e.preventDefault()
-    location.href = `${import.meta.env.BASE_URL + "/select-plan"}`
+    navigate('/select-plan')
   }
 
   return (
