@@ -22,21 +22,24 @@ export const plans = [
     title: 'Arcade',
     iconUrl: '/images/icon-arcade.svg',
     price: {
-      monthly: 9
+      monthly: 9,
+      yearly: 90
     }
   },
   {
     title: 'Advanced',
     iconUrl: '/images/icon-advanced.svg',
     price: {
-      monthly: 12
+      monthly: 12,
+      yearly: 120
     }
   },
   {
     title: 'Pro',
     iconUrl: '/images/icon-pro.svg',
     price: {
-      monthly: 15
+      monthly: 15,
+      yearly: 150
     }
   }
 ]

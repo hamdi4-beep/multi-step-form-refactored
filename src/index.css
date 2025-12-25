@@ -147,7 +147,7 @@ input {
     border: 1px solid var(--neutral-purple-200);
     border-radius: 10px;
     padding: 1em;
-    padding-right: 4em;
+    width: 10rem;
 }
 
 .plan-item.active {
@@ -162,6 +162,12 @@ input {
 
 .plan-item p {
     color: var(--neutral-grey-500);
+}
+
+.plan-item span {
+    display: block;
+    margin-top: .3em;
+    color: var(--primary-blue-950);
 }
 
 .plan-item .icon-img {

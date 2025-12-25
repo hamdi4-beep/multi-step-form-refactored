@@ -1,7 +1,5 @@
-import { useState } from "react"
-import YourInfo from "./components/YourInfo"
 import SelectPlan from "./components/SelectPlan"
-import { steps, plans } from "./data"
+import { steps } from "./data"
 
 function App() {
   return (
@@ -9,7 +7,7 @@ function App() {
       <main className="container">
         <div className="sidebar">
           {steps.map(step => (
-            <div className={`step ${step.order === 1 ? 'active' : ''}`} key={step.order}>
+            <div className={`step ${step.order === 2 ? 'active' : ''}`} key={step.order}>
               <span>{step.order}</span>
 
               <div>

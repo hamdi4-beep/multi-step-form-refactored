@@ -19,7 +19,11 @@ function SelectPlan() {
 
             <div className="info">
               <h4>{plan.title}</h4>
-              <p>${plan.price.monthly}/mo</p>
+              <p>${plan.price[billingCycle]}/{billingCycle === 'monthly' ? 'mo' : 'yr'}</p>
+
+              {billingCycle === 'yearly' && (
+                <span>2 months free</span>
+              )}
             </div>
           </div>
         ))}
