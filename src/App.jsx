@@ -1,15 +1,23 @@
-import { Route, Routes } from "react-router"
+import { Route, Routes, useLocation } from "react-router"
 import SelectPlan from "./components/SelectPlan"
 import YourInfo from './components/YourInfo'
 import { steps } from "./data"
 
+const paths = {
+  '/': 1,
+  '/select-plan': 2
+}
+
 function App() {
+  const location = useLocation()
+  const currentStepOrder = paths[location.pathname]
+
   return (
     <div className="App">
       <main className="container">
         <div className="sidebar">
           {steps.map(step => (
-            <div className={`step ${step.order === 2 ? 'active' : ''}`} key={step.order}>
+            <div className={`step ${step.order === currentStepOrder ? 'active' : ''}`} key={step.order}>
               <span>{step.order}</span>
 
               <div>
