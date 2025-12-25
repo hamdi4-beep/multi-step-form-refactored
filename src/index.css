@@ -124,9 +124,6 @@ input {
 
 .cta-btn {
     font: inherit;
-    position: absolute;
-    bottom: 1em;
-    right: 5em;
     background-color: var(--primary-blue-950);
     padding: .8em;
     padding-inline: 1.3em;
@@ -135,6 +132,10 @@ input {
     border: none;
     color: var(--neutral-white);
     cursor: pointer;
+}
+
+.step-1 .action-buttons {
+    justify-content: flex-end;
 }
 
 .plans-list {
@@ -172,8 +173,10 @@ input {
     gap: 1em;
     align-items: center;
     margin-top: 3em;
-    width: fit-content;
-    margin-inline: auto;
+    padding: 1em;
+    background-color: var(--neutral-blue-100);
+    border-radius: 10px;
+    justify-content: center;
 }
 
 .toggle.active .switch::after {
@@ -204,4 +207,21 @@ input {
     width: 1em;
     height: 1em;
     border-radius: 100%;
+}
+
+.action-buttons {
+    position: absolute;
+    bottom: 1em;
+    right: 5em;
+    width: calc(100% - 10em);
+    display: flex;
+    justify-content: space-between;
+}
+
+.previous-btn {
+    background: none;
+    border: none;
+    color: var(--neutral-grey-500);
+    font: inherit;
+    cursor: pointer;
 }

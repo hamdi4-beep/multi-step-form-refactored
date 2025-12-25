@@ -11,7 +11,10 @@ function YourInfo() {
         <input type="email" name="email" id="email" placeholder="e.g. stephenking@lorem.com" />
         <label htmlFor="phoneNumber">Phone Number</label>
         <input type="number" name="phone" id="phone" min='0' placeholder="e.g. +1 234 567 890" />
-        <button className="cta-btn">Next Step</button>
+        
+        <div className="action-buttons">
+          <button className="cta-btn">Next Step</button>
+        </div>
       </form>
     </div>
   )

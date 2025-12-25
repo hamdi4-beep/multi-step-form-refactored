@@ -31,6 +31,11 @@ const SelectPlan = () => {
         <div className="switch"></div>
         <p className="yearly" onClick={() => setBillingCycle('yearly')}>Yearly</p>
       </div>
+
+      <div className="action-buttons">
+        <button className="previous-btn">Go Back</button>
+        <button className="cta-btn">Next Step</button>
+      </div>
     </div>
   )
 }
@@ -53,7 +58,7 @@ function App() {
         </div>
 
         <section className="main-content">
-          <SelectPlan />
+          <YourInfo />
         </section>
       </main>
     </div>
