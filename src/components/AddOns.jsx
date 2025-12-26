@@ -33,8 +33,8 @@ function AddOns() {
             </div>
 
             <div className="action-buttons">
-                <button className="previous-btn" onClick={() => navigate('/select-plan')}>Go back</button>
-                <button className="cta-btn">Next Step</button>
+                <button className="previous-btn" onClick={() => navigate('/select-plan')}>Go Back</button>
+                <button className="cta-btn" onClick={() => navigate('/summary')}>Next Step</button>
             </div>
         </div>
     )

@@ -3,6 +3,9 @@ import SelectPlan from "./components/SelectPlan"
 import YourInfo from './components/YourInfo'
 import { steps } from "./data"
 import AddOns from "./components/AddOns"
+import Summary from "./components/Summary"
+
+
 
 function App() {
   const location = useLocation()
@@ -28,6 +31,7 @@ function App() {
             <Route index element={<YourInfo />} />
             <Route path="/select-plan" element={<SelectPlan />} />
             <Route path="/add-ons" element={<AddOns />} />
+            <Route path="/summary" element={<Summary />} />
           </Routes>
         </section>
       </main>

@@ -226,7 +226,7 @@ body {
     justify-content: space-between;
 }
 
-.previous-btn {
+button {
     background: none;
     border: none;
     color: var(--neutral-grey-500);
@@ -265,4 +265,54 @@ body {
 
 .addon-item.active .addon-price, .addon-price {
     color: var(--primary-purple-600);
+}
+
+.summary {
+    background-color: var(--neutral-blue-100);
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.summary .plan-info {
+    border-bottom: 1px solid var(--neutral-purple-200);
+    padding-bottom: 1.5em;
+    margin-bottom: 1em;
+    align-items: center;
+}
+
+.summary .plan-info, .summary .item, .total-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary .plan-title {
+    margin-bottom: .2em;
+}
+
+.summary .plan-title, .summary .plan-price {
+    font-weight: bold;
+    color: var(--primary-blue-950);
+}
+
+.summary .change-button {
+    text-decoration: underline;
+}
+
+.summary .item {
+    padding-bottom: 1em;
+}
+
+.summary .addon-title, .total-label {
+    color: var(--neutral-grey-500);
+}
+
+.total-price {
+    color: var(--primary-purple-600);
+    font-weight: 700;
+    font-size: larger;
+}
+
+.total-wrapper {
+    padding: 1em;
+    margin-top: 1em;
 }
