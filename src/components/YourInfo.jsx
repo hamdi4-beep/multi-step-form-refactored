@@ -10,7 +10,7 @@ function YourInfo() {
 
   return (
     <div className="step-1">
-      <h1 className="title">Personal Info</h1>
+      <h1 className="title">Personal info</h1>
       <p className="description">Please provide your name, email address, and phone number.</p>
 
       <form action="#" onSubmit={handleSubmit}>

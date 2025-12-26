@@ -27,8 +27,8 @@ body {
     background-color: var(--neutral-blue-100);
     font-family: Ubuntu;
     display: grid;
-    place-content: center;
     min-height: 100vh;
+    align-items: center;
 }
 
 input {
@@ -46,6 +46,7 @@ input {
 .container {
     background-color: var(--neutral-white);
     padding: 1em;
+    margin-inline: auto;
     display: flex;
     max-width: 1024px;
     width: 100%;
@@ -101,6 +102,7 @@ input {
 
 .main-content {
     flex-shrink: 0;
+    flex-grow: 1;
     padding-inline: 5em;
     padding-top: 3em;
     position: relative;
