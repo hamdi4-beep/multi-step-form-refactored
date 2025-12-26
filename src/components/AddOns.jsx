@@ -1,6 +1,16 @@
+import { useState } from "react"
 import { addons } from "../data"
 
 function AddOns() {
+    const [selectedAddOns, setSelectedAddOns] = useState([])
+    console.log(selectedAddOns)
+
+    const selectAddOn = addon =>
+        setSelectedAddOns(prev =>
+            prev.includes(addon.title) ?
+                prev.filter(it => it !== addon.title) : Array.from(new Set([...prev, addon.title]))
+        )
+
     return (
         <div className="step-3">
             <h1 className="title">Pick add-ons</h1>
@@ -8,8 +18,8 @@ function AddOns() {
 
             <div className="addons-list">
                 {addons.map(addon => (
-                    <div className="addon-item">
-                        <input type="checkbox" name="addon" id="addon" />
+                    <div className="addon-item" key={addon.title} onClick={() => selectAddOn(addon)}>
+                        <input type="checkbox" name="addon" id="addon" checked={selectedAddOns.includes(addon.title)} onChange={() => {}} />
 
                         <div className="addon-info">
                             <h4>{addon.title}</h4>
