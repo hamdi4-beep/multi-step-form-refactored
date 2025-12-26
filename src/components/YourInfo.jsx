@@ -15,11 +15,11 @@ function YourInfo() {
 
       <form action="#" onSubmit={handleSubmit}>
         <label htmlFor="name">Name</label>
-        <input type="text" name="name" id="name" placeholder="e.g. Stephen King" />
+        <input type="text" className="input-field" name="name" id="name" placeholder="e.g. Stephen King" />
         <label htmlFor="emailAddress">Email Address</label>
-        <input type="email" name="email" id="email" placeholder="e.g. stephenking@lorem.com" />
+        <input type="email" className="input-field" name="email" id="email" placeholder="e.g. stephenking@lorem.com" />
         <label htmlFor="phoneNumber">Phone Number</label>
-        <input type="number" name="phone" id="phone" min='0' placeholder="e.g. +1 234 567 890" />
+        <input type="number" className="input-field" name="phone" id="phone" min='0' placeholder="e.g. +1 234 567 890" />
         
         <div className="action-buttons">
           <button className="cta-btn">Next Step</button>

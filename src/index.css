@@ -31,7 +31,7 @@ body {
     align-items: center;
 }
 
-input {
+.input-field {
     width: 100%;
     display: block;
     margin-bottom: 1em;
@@ -232,4 +232,31 @@ input {
     color: var(--neutral-grey-500);
     font: inherit;
     cursor: pointer;
+}
+
+.addon-item {
+    border: 1px solid var(--neutral-purple-200);
+    border-radius: 10px;
+    display: flex;
+    padding: 1.5em;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.addon-info {
+    margin-right: auto;
+    margin-left: 1.5em;
+}
+
+.addon-info h4 {
+    color: var(--primary-blue-950);
+    margin-bottom: .2em;
+}
+
+.addon-info p {
+    color: var(--neutral-grey-500);
+}
+
+.addon-price {
+    color: var(--primary-purple-600);
 }

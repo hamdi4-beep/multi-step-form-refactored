@@ -2,6 +2,7 @@ import { Route, Routes, useLocation } from "react-router"
 import SelectPlan from "./components/SelectPlan"
 import YourInfo from './components/YourInfo'
 import { steps } from "./data"
+import AddOns from "./components/AddOns"
 
 function App() {
   const location = useLocation()
@@ -14,7 +15,7 @@ function App() {
             <div className={`step ${step.path === location.pathname ? 'active' : ''}`} key={step.id}>
               <span>{step.id}</span>
 
-              <div>
+              <div className="step-info">
                 <p>Step {step.id}</p>
                 <h4>{step.title}</h4>
               </div>
@@ -26,6 +27,7 @@ function App() {
           <Routes>
             <Route index element={<YourInfo />} />
             <Route path="/select-plan" element={<SelectPlan />} />
+            <Route path="/add-ons" element={<AddOns />} />
           </Routes>
         </section>
       </main>
