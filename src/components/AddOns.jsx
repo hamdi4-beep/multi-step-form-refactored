@@ -18,7 +18,7 @@ function AddOns() {
 
             <div className="addons-list">
                 {addons.map(addon => (
-                    <div className="addon-item" key={addon.title} onClick={() => selectAddOn(addon)}>
+                    <div className={`addon-item ${selectedAddOns.includes(addon.title) ? 'active' : ''}`} key={addon.title} onClick={() => selectAddOn(addon)}>
                         <input type="checkbox" name="addon" id="addon" checked={selectedAddOns.includes(addon.title)} onChange={() => {}} />
 
                         <div className="addon-info">

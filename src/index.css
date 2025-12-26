@@ -243,6 +243,11 @@ body {
     margin-bottom: 1em;
 }
 
+.addon-item.active {
+    background-color: var(--neutral-blue-100);
+    border-color: var(--primary-blue-950);
+}
+
 .addon-info {
     margin-right: auto;
     margin-left: 1.5em;
@@ -257,6 +262,6 @@ body {
     color: var(--neutral-grey-500);
 }
 
-.addon-price {
+.addon-item.active .addon-price, .addon-price {
     color: var(--primary-purple-600);
 }
