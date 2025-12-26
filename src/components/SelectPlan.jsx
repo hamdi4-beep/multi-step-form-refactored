@@ -39,7 +39,7 @@ function SelectPlan() {
 
       <div className="action-buttons">
         <button className="previous-btn" onClick={() => navigate('/')}>Go Back</button>
-        <button className="cta-btn">Next Step</button>
+        <button className="cta-btn" onClick={() => navigate('/add-ons')}>Next Step</button>
       </div>
     </div>
   )

@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { addons } from "../data"
+import { useNavigate } from "react-router"
 
 function AddOns() {
     const [selectedAddOns, setSelectedAddOns] = useState([])
-    console.log(selectedAddOns)
+    const navigate = useNavigate()
 
     const selectAddOn = addon =>
         setSelectedAddOns(prev =>
@@ -32,7 +33,7 @@ function AddOns() {
             </div>
 
             <div className="action-buttons">
-                <button className="previous-btn">Go back</button>
+                <button className="previous-btn" onClick={() => navigate('/select-plan')}>Go back</button>
                 <button className="cta-btn">Next Step</button>
             </div>
         </div>
