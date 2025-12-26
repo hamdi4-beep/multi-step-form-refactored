@@ -46,6 +46,7 @@ body {
 .container {
     background-color: var(--neutral-white);
     padding: 1em;
+    padding-right: 0;
     margin-inline: auto;
     display: flex;
     max-width: 1024px;
@@ -69,16 +70,16 @@ body {
     color: var(--neutral-purple-200);
 }
 
+.sidebar .active span {
+    background-color: var(--neutral-white);
+    color: black;
+}
+
 .step {
     display: flex;
     gap: 1em;
     align-items: center;
     margin-bottom: 1.5em;
-}
-
-.active span {
-    background-color: var(--neutral-white);
-    color: black;
 }
 
 .step span {
@@ -149,7 +150,8 @@ body {
     border: 1px solid var(--neutral-purple-200);
     border-radius: 10px;
     padding: 1em;
-    width: 10rem;
+    flex-shrink: 0;
+    flex-grow: 1;
 }
 
 .plan-item.active {
