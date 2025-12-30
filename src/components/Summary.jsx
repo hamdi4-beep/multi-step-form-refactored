@@ -11,10 +11,13 @@ function Summary() {
             replace: true,
             state: {
                 ...state,
-                billingCycle: state.billingCycle === 'monthly' ? 'yearly' : 'monthly'
+                billingCycle: billingCycle === 'monthly' ? 'yearly' : 'monthly'
             }
         })
     }
+
+    const addOnsPrices = selectedAddOns.map(addon => addon.price[billingCycle])
+    const totalPrice = addOnsPrices.reduce((prev, curr) => prev + curr) + selectedPlan.price[billingCycle]
 
     return (
         <div className="step-4">
@@ -24,7 +27,11 @@ function Summary() {
             <div className="summary">
                 <div className="plan-info">
                     <div>
-                        <h4 className="plan-title">{selectedPlan.title} (<span className="upper-case">{billingCycle}</span>)</h4>
+                        <h4 className="plan-title">
+                            {selectedPlan.title}
+                            <span> ({billingCycle.replace(billingCycle[0], billingCycle[0].toUpperCase())})</span>
+                        </h4>
+
                         <button className="change-button" onClick={handleChangeClick}>Change</button>
                     </div>
 
@@ -42,8 +49,8 @@ function Summary() {
             </div>
 
             <div className="total-wrapper">
-                <p className="total-label">Total (per month)</p>
-                <span className="total-price">+$12/mo</span>
+                <p className="total-label">Total (per {billingCycle === 'monthly' ? 'month' : 'year'})</p>
+                <span className="total-price">+${totalPrice}/{billingCycle === 'monthly' ? 'mo' : 'yr'}</span>
             </div>
 
             <div className="action-buttons">
