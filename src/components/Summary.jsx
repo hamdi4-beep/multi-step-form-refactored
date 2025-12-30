@@ -1,6 +1,19 @@
+import { useState } from "react"
 import { useLocation, useNavigate } from "react-router"
 
+const Confirmation = () => (
+    <div className="confirmation">
+        <div className="img-icon">
+            <img src={import.meta.env.BASE_URL + '/images/icon-thank-you.svg'} alt="" />
+        </div>
+
+        <h1>Thank you!</h1>
+        <p>Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com</p>
+    </div>
+)
+
 function Summary() {
+    const [isConfirmed, setIsConfirmed] = useState(false)
     const navigate = useNavigate()
     const {pathname, state} = useLocation()
 
@@ -16,8 +29,13 @@ function Summary() {
         })
     }
 
-    const addOnsPrices = selectedAddOns.map(addon => addon.price[billingCycle])
-    const totalPrice = addOnsPrices.reduce((prev, curr) => prev + curr) + selectedPlan.price[billingCycle]
+    const totalAddOnsPrice = selectedAddOns
+        .map(addon => addon.price[billingCycle])
+        .reduce((prev, curr) => prev + curr)
+
+    const totalPrice = totalAddOnsPrice + selectedPlan.price[billingCycle]
+
+    if (isConfirmed) return <Confirmation />
 
     return (
         <div className="step-4">
@@ -55,7 +73,7 @@ function Summary() {
 
             <div className="action-buttons">
                 <button className="previous-button" onClick={() => navigate('/add-ons')}>Go Back</button>
-                <button className="cta-btn">Next Step</button>
+                <button className="cta-btn" onClick={() => setIsConfirmed(true)}>Confirm</button>
             </div>
         </div>
     )

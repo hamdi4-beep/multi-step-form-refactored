@@ -105,8 +105,11 @@ body {
     flex-shrink: 0;
     flex-grow: 1;
     padding-inline: 5em;
-    padding-top: 3em;
     position: relative;
+}
+
+.step-1, .step-2, .step-3, .step-4 {
+    margin-top: 3em;
 }
 
 .main-content h1.title {
@@ -317,4 +320,23 @@ button {
 .total-wrapper {
     padding: 1em;
     margin-top: 1em;
+}
+
+.confirmation {
+    width: 30rem;
+    display: grid;
+    place-content: center;
+    height: 100%;
+    margin-inline: auto;
+    text-align: center;
+    gap: 1em;
+}
+
+.confirmation h1 {
+    margin-top: .3em;
+    color: var(--primary-blue-950);
+}
+
+.confirmation p {
+    color: var(--neutral-grey-500);
 }
