@@ -1,7 +1,20 @@
-import { useNavigate } from "react-router"
+import { useLocation, useNavigate } from "react-router"
 
 function Summary() {
     const navigate = useNavigate()
+    const {pathname, state} = useLocation()
+
+    const {selectedAddOns, selectedPlan, billingCycle} = state
+
+    const handleChangeClick = () => {
+        navigate(pathname, {
+            replace: true,
+            state: {
+                ...state,
+                billingCycle: state.billingCycle === 'monthly' ? 'yearly' : 'monthly'
+            }
+        })
+    }
 
     return (
         <div className="step-4">
@@ -11,23 +24,20 @@ function Summary() {
             <div className="summary">
                 <div className="plan-info">
                     <div>
-                        <h4 className="plan-title">Arcade (Monthly)</h4>
-                        <button className="change-button">Change</button>
+                        <h4 className="plan-title">{selectedPlan.title} (<span className="upper-case">{billingCycle}</span>)</h4>
+                        <button className="change-button" onClick={handleChangeClick}>Change</button>
                     </div>
 
-                    <span className="plan-price">$9/mo</span>
+                    <span className="plan-price">${selectedPlan.price[billingCycle]}/{billingCycle === 'monthly' ? 'mo' : 'yr'}</span>
                 </div>
 
                 <div className="addons-list">
-                    <div className="item">
-                        <p className="addon-title">Online service</p>
-                        <span>+$1/mo</span>
-                    </div>
-
-                    <div className="item">
-                        <p className="addon-title">Larger storage</p>
-                        <span>+$2/mo</span>
-                    </div>
+                    {selectedAddOns.map(addon => (
+                        <div className="item" key={addon.title}>
+                            <p className="addon-title">{addon.title}</p>
+                            <span>+${addon.price[billingCycle]}/{billingCycle === 'monthly' ? 'mo' : 'yr'}</span>
+                        </div>
+                    ))}
                 </div>
             </div>
 
@@ -37,7 +47,7 @@ function Summary() {
             </div>
 
             <div className="action-buttons">
-                <button className="previous-button" onClick={() => navigate('/add-ons')}>Go back</button>
+                <button className="previous-button" onClick={() => navigate('/add-ons')}>Go Back</button>
                 <button className="cta-btn">Next Step</button>
             </div>
         </div>

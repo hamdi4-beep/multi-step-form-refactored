@@ -9,7 +9,8 @@ import Summary from "./components/Summary"
 
 function App() {
   const location = useLocation()
-
+  console.log(location.state)
+  
   return (
     <div className="App">
       <main className="container">

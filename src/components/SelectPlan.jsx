@@ -4,7 +4,7 @@ import { useNavigate } from "react-router"
 
 function SelectPlan() {
   const navigate = useNavigate()
-  const [selectedPlan, setSelectedPlan] = useState('')
+  const [selectedPlan, setSelectedPlan] = useState({})
   const [billingCycle, setBillingCycle] = useState('monthly')
 
   return (
@@ -14,7 +14,7 @@ function SelectPlan() {
 
       <div className="plans-list">
         {plans.map(plan => (
-          <div className={`plan-item ${selectedPlan === plan.title ? 'active' : ''}`} onClick={e => setSelectedPlan(plan.title)} key={plan.title}>
+          <div className={`plan-item ${selectedPlan.title === plan.title ? 'active' : ''}`} onClick={e => setSelectedPlan(plan)} key={plan.title}>
             <div className="icon-img">
               <img src={`${import.meta.env.BASE_URL + plan.iconUrl}`} alt={plan.title} />
             </div>
@@ -39,7 +39,12 @@ function SelectPlan() {
 
       <div className="action-buttons">
         <button className="previous-btn" onClick={() => navigate('/')}>Go Back</button>
-        <button className="cta-btn" onClick={() => navigate('/add-ons')}>Next Step</button>
+        <button className="cta-btn" onClick={() => navigate('/add-ons', {
+          state: {
+            billingCycle,
+            selectedPlan
+          }
+        })}>Next Step</button>
       </div>
     </div>
   )
