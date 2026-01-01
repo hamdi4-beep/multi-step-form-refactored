@@ -4,12 +4,15 @@ import YourInfo from './components/YourInfo'
 import { steps } from "./data"
 import AddOns from "./components/AddOns"
 import Summary from "./components/Summary"
+import ProtectedRoute from "./components/ProtectedRoute"
 
 
 
 function App() {
   const location = useLocation()
-  console.log(location.state)
+  const {state} = location
+
+  console.log(state)
   
   return (
     <div className="App">
@@ -30,9 +33,12 @@ function App() {
         <section className="main-content">
           <Routes>
             <Route index element={<YourInfo />} />
-            <Route path="/select-plan" element={<SelectPlan />} />
-            <Route path="/add-ons" element={<AddOns />} />
-            <Route path="/summary" element={<Summary />} />
+
+            <Route element={<ProtectedRoute isAccessAllowed={state?.stepsCompleted >= 1} />}>
+              <Route path="/select-plan" element={<SelectPlan />} />
+              <Route path="/add-ons" element={<AddOns />} />
+              <Route path="/summary" element={<Summary />} />
+            </Route>
           </Routes>
         </section>
       </main>

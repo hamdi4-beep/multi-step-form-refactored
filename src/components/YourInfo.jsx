@@ -5,7 +5,12 @@ function YourInfo() {
 
   const handleSubmit = e => {
     e.preventDefault()
-    navigate('/select-plan')
+    
+    navigate('/select-plan', {
+      state: {
+        stepsCompleted: 1
+      }
+    })
   }
 
   return (

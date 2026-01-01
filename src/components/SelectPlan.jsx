@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { plans } from "../data"
-import { useNavigate } from "react-router"
+import { useLocation, useNavigate } from "react-router"
 
 function SelectPlan() {
+  const {state} = useLocation()
   const navigate = useNavigate()
   const [selectedPlan, setSelectedPlan] = useState({})
   const [billingCycle, setBillingCycle] = useState('monthly')
@@ -41,6 +42,7 @@ function SelectPlan() {
         <button className="previous-btn" onClick={() => navigate('/')}>Go Back</button>
         <button className="cta-btn" onClick={() => navigate('/add-ons', {
           state: {
+            ...state,
             billingCycle,
             selectedPlan
           }
