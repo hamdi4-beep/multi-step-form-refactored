@@ -6,13 +6,9 @@ import AddOns from "./components/AddOns"
 import Summary from "./components/Summary"
 import ProtectedRoute from "./components/ProtectedRoute"
 
-
-
 function App() {
   const location = useLocation()
   const {state} = location
-
-  console.log(state)
   
   return (
     <div className="App">
@@ -34,7 +30,9 @@ function App() {
           <Routes>
             <Route index element={<YourInfo />} />
 
-            <Route element={<ProtectedRoute isAccessAllowed={state?.stepsCompleted >= 1} />}>
+            {/* users are only allowed access when they navigate to the next step with the updated state*/}
+            {/* state is lost when you redirect to a different route with the url so this is safe */}
+            <Route element={<ProtectedRoute isAccessAllowed={state?.isAccessAllowed} />}>
               <Route path="/select-plan" element={<SelectPlan />} />
               <Route path="/add-ons" element={<AddOns />} />
               <Route path="/summary" element={<Summary />} />
