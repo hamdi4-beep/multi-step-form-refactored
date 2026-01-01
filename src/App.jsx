@@ -30,7 +30,7 @@ function App() {
           <Routes>
             <Route index element={<YourInfo />} />
 
-            {/* users are only allowed access when they navigate to the next step with the updated state*/}
+            {/* users are only allowed access when they navigate with the updated state*/}
             {/* state is lost when you redirect to a different route with the url so this is safe */}
             <Route element={<ProtectedRoute isAccessAllowed={state?.isAccessAllowed} />}>
               <Route path="/select-plan" element={<SelectPlan />} />
