@@ -14,7 +14,15 @@ function AddOns() {
         )
 
 
-    console.log(selectedAddOns)
+    const handleNextClick = () => {
+        if (selectedAddOns.length > 0)
+            navigate('/summary', {
+                    state: {
+                        ...state,
+                        selectedAddOns
+                    }
+                })
+    }
 
     return (
         <div className="step-3">
@@ -38,13 +46,7 @@ function AddOns() {
 
             <div className="action-buttons">
                 <button className="previous-btn" onClick={() => navigate('/select-plan', { state })}>Go Back</button>
-                
-                <button className="cta-btn" onClick={() => navigate('/summary', {
-                    state: {
-                        ...state,
-                        selectedAddOns
-                    }
-                })}>Next Step</button>
+                <button className="cta-btn" onClick={handleNextClick}>Next Step</button>
             </div>
         </div>
     )
