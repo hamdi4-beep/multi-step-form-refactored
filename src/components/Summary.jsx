@@ -72,7 +72,7 @@ function Summary() {
             </div>
 
             <div className="action-buttons">
-                <button className="previous-button" onClick={() => navigate('/add-ons')}>Go Back</button>
+                <button className="previous-button" onClick={() => navigate('/add-ons', { state })}>Go Back</button>
                 <button className="cta-btn" onClick={() => setIsConfirmed(true)}>Confirm</button>
             </div>
         </div>
