@@ -12,8 +12,8 @@ function App() {
   
   return (
     <div className="App">
-      <main className="container">
-        <div className="sidebar">
+      <main className="bg-neutral-white flex max-w-4xl p-4 mx-auto rounded-xl">
+        <div className="outline pr-60">
           {steps.map(step => (
             <div className={`step ${step.path === location.pathname ? 'active' : ''}`} key={step.id}>
               <span>{step.id}</span>
@@ -26,7 +26,7 @@ function App() {
           ))}
         </div>
 
-        <section className="main-content">
+        <section className="mx-auto">
           <Routes>
             <Route index element={<YourInfo />} />
 
