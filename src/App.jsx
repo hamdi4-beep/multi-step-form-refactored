@@ -12,13 +12,16 @@ function App() {
   
   return (
     <div className="App">
-      <main className="bg-neutral-white flex max-w-4xl p-4 mx-auto rounded-xl">
-        <div className="outline pr-60">
-          {steps.map(step => (
-            <div className={`step ${step.path === location.pathname ? 'active' : ''}`} key={step.id}>
-              <span>{step.id}</span>
+      <main className="bg-neutral-white md:flex max-w-4xl md:p-4 mx-auto rounded-xl">
+        <img src={import.meta.env.BASE_URL + "/images/bg-sidebar-desktop.svg"} className="md:inline hidden" alt="" />
+        <img src={import.meta.env.BASE_URL + "/images/bg-sidebar-mobile.svg"} className="md:hidden inline w-full" alt="" />
 
-              <div className="step-info">
+        <div className="absolute inset-0 md:inset-auto flex gap-2 pb-44 md:pb-0 justify-center md:block md:p-4">
+          {steps.map(step => (
+            <div className={`flex items-start gap-2 mt-8 md:mt-0 ${step.path === location.pathname ? 'active' : ''}`} key={step.id}>
+              <span className="rounded-full border text-white leading-1 p-3.5">{step.id}</span>
+
+              <div className="hidden md:block">
                 <p>Step {step.id}</p>
                 <h4>{step.title}</h4>
               </div>
@@ -26,7 +29,7 @@ function App() {
           ))}
         </div>
 
-        <section className="mx-auto">
+        <section className="relative md:mx-auto mx-4 -mt-24 md:mt-0 bg-neutral-white z-50">
           <Routes>
             <Route index element={<YourInfo />} />
 
