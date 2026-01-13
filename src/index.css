@@ -22,3 +22,15 @@
 .input-field {
     @apply block border border-neutral-purple-200 p-2 w-full rounded-md mb-2 mt-1
 }
+
+.btn {
+    @apply p-2 px-0 cursor-pointer text-neutral-grey-500 md:absolute bottom-4
+}
+
+.cta-btn {
+    @apply bg-primary-blue-950 p-2 px-4 rounded-md text-neutral-white cursor-pointer
+}
+
+.heading {
+    @apply text-5xl mb-2
+}

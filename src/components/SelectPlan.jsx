@@ -20,20 +20,20 @@ function SelectPlan() {
   }
 
   return (
-    <div className="step-2">
-      <h1 className="title">Select your plan</h1>
-      <p className="description">You have the option of monthly or yearly billing.</p>
+    <div className="step">
+      <h1 className="heading">Select your plan</h1>
+      <p className="text-neutral-grey-500">You have the option of monthly or yearly billing.</p>
 
-      <div className="plans-list">
+      <div className="flex gap-4">
         {plans.map(plan => (
-          <div className={`plan-item ${selectedPlan && selectedPlan.title == plan.title ? 'active' : ''}`} onClick={e => setSelectedPlan(plan)} key={plan.title}>
-            <div className="icon-img">
+          <div className={`border-neutral-purple-200 border rounded-md p-4 shrink-0 grow mt-8 ${selectedPlan && selectedPlan.title == plan.title ? 'border-primary-blue-950 bg-neutral-blue-100' : ''}`} onClick={e => setSelectedPlan(plan)} key={plan.title}>
+            <div className="mb-8">
               <img src={`${import.meta.env.BASE_URL + plan.iconUrl}`} alt={plan.title} />
             </div>
 
             <div className="info">
-              <h4>{plan.title}</h4>
-              <p>${plan.price[billingCycle]}/{billingCycle === 'monthly' ? 'mo' : 'yr'}</p>
+              <h4 className="text-primary-blue-950 font-bold">{plan.title}</h4>
+              <p className="text-neutral-grey-500">${plan.price[billingCycle]}/{billingCycle === 'monthly' ? 'mo' : 'yr'}</p>
 
               {billingCycle === 'yearly' && (
                 <span>2 months free</span>
@@ -43,15 +43,19 @@ function SelectPlan() {
         ))}
       </div>
 
-      <div className={`toggle ${billingCycle === 'yearly' ? 'active' : ''}`}>
-        <p className="monthly" onClick={() => setBillingCycle('monthly')}>Monthly</p>
-        <div className="switch"></div>
-        <p className="yearly" onClick={() => setBillingCycle('yearly')}>Yearly</p>
+      <div className={`justify-center mt-8 flex gap-4 ${billingCycle === 'yearly' ? 'active' : ''}`}>
+        <p className={`cursor-pointer ${billingCycle === 'monthly' ? 'font-bold text-primary-blue-950' : ''}`} onClick={() => setBillingCycle('monthly')}>Monthly</p>
+        
+        <div className={`bg-primary-blue-950 w-12 p-1 rounded-full flex ${billingCycle === 'yearly' ? 'justify-end' : ''}`}>
+          <div className="bg-white h-4 w-4 rounded-full"></div>
+        </div>
+
+        <p className={`cursor-pointer ${billingCycle === 'yearly' ? 'font-bold text-primary-blue-950' : ''}`} onClick={() => setBillingCycle('yearly')}>Yearly</p>
       </div>
 
-      <div className="action-buttons">
-        <button className="previous-btn" onClick={() => navigate('/')}>Go Back</button>
-        <button className="cta-btn" onClick={handleNextClick}>Next Step</button>
+      <div className="">
+        <button className="btn" onClick={() => navigate('/')}>Go Back</button>
+        <button className="cta-btn md:absolute bottom-4 right-24" onClick={handleNextClick}>Next Step</button>
       </div>
     </div>
   )

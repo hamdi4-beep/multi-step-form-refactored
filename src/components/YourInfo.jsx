@@ -15,7 +15,7 @@ function YourInfo() {
 
   return (
     <div className="step">
-      <h1 className="text-5xl mb-2">Personal info</h1>
+      <h1 className="heading">Personal info</h1>
       <p className="text-neutral-grey-500">Please provide your name, email address, and phone number.</p>
 
       <form action="#" className="grid mt-8" onSubmit={handleSubmit}>
@@ -27,7 +27,7 @@ function YourInfo() {
         <input type="number" className="input-field" name="phone" id="phone" min='0' placeholder="e.g. +1 234 567 890" required />
         
         <div className="md:absolute bottom-4 right-24">
-          <button className="bg-primary-blue-950 p-2 px-4 rounded-md text-neutral-white">Next Step</button>
+          <button className="cta-btn">Next Step</button>
         </div>
       </form>
     </div>

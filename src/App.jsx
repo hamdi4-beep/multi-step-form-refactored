@@ -11,7 +11,7 @@ function App() {
   const {state} = location
   
   return (
-    <div className="App">
+    <div className="mt-4">
       <main className="bg-neutral-white md:flex max-w-5xl md:p-4 mx-auto rounded-xl">
         <img src={import.meta.env.BASE_URL + "/images/bg-sidebar-desktop.svg"} className="md:inline hidden" alt="" />
         <img src={import.meta.env.BASE_URL + "/images/bg-sidebar-mobile.svg"} className="md:hidden inline w-full" alt="" />
@@ -29,7 +29,7 @@ function App() {
           ))}
         </div>
 
-        <section className="rounded-xl md:rounded-none relative px-8 pt-8 md:mx-auto mx-4 -mt-24 md:mt-0 md:px-24 md:pt-10 bg-neutral-white z-50">
+        <section className="shadow-[4px_5px_31px_-9px_rgba(0,0,0,0.75)] md:shadow-none rounded-xl md:rounded-none relative px-8 pt-8 w-full mx-4 -mt-24 md:mt-0 md:px-24 md:pt-10 bg-neutral-white z-50">
           <Routes>
             <Route index element={<YourInfo />} />
 
