@@ -12,24 +12,24 @@ function App() {
   
   return (
     <div className="App">
-      <main className="bg-neutral-white md:flex max-w-4xl md:p-4 mx-auto rounded-xl">
+      <main className="bg-neutral-white md:flex max-w-5xl md:p-4 mx-auto rounded-xl">
         <img src={import.meta.env.BASE_URL + "/images/bg-sidebar-desktop.svg"} className="md:inline hidden" alt="" />
         <img src={import.meta.env.BASE_URL + "/images/bg-sidebar-mobile.svg"} className="md:hidden inline w-full" alt="" />
 
-        <div className="absolute inset-0 md:inset-auto flex gap-2 pb-44 md:pb-0 justify-center md:block md:p-4">
+        <div className="absolute inset-0 md:inset-auto flex gap-2 md:pb-0 justify-center md:block md:p-4 md:pl-8">
           {steps.map(step => (
-            <div className={`flex items-start gap-2 mt-8 md:mt-0 ${step.path === location.pathname ? 'active' : ''}`} key={step.id}>
-              <span className="rounded-full border text-white leading-1 p-3.5">{step.id}</span>
+            <div className="flex items-start md:items-center gap-4 mt-8 md:mt-4" key={step.id}>
+              <span className={`rounded-full border border-white leading-1 p-3.5 ${location.pathname === step.path ? 'bg-neutral-white text-black' : 'text-white'}`}>{step.id}</span>
 
               <div className="hidden md:block">
-                <p>Step {step.id}</p>
-                <h4>{step.title}</h4>
+                <p className="text-neutral-purple-200 uppercase">Step {step.id}</p>
+                <h4 className="text-neutral-white uppercase font-medium">{step.title}</h4>
               </div>
             </div>
           ))}
         </div>
 
-        <section className="relative md:mx-auto mx-4 -mt-24 md:mt-0 bg-neutral-white z-50">
+        <section className="rounded-xl md:rounded-none relative px-8 pt-8 md:mx-auto mx-4 -mt-24 md:mt-0 md:px-24 md:pt-10 bg-neutral-white z-50">
           <Routes>
             <Route index element={<YourInfo />} />
 

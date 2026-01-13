@@ -13,3 +13,12 @@
     --color-neutral-blue-50: hsl(231, 100%, 99%);
     --color-neutral-white: hsl(0, 100%, 100%);
 }
+
+@font-face {
+    font-family: Ubuntu;
+    src: url('/fonts/Ubuntu-Regular.ttf');
+}
+
+.input-field {
+    @apply block border border-neutral-purple-200 p-2 w-full rounded-md mb-2 mt-1
+}
